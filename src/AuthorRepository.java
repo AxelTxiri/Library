@@ -13,17 +13,17 @@ public class AuthorRepository {
         authors.add(author);
         System.out.println("Successfully created.");
     }
-    public void readAuthor(){
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyy");
+    public void readAuthor() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         System.out.printf("%-5s %-10s %-15s %-15s %-10s\n","#","Name","Last Name","Birthdate","Books Title");
-        int authorId=0;
-        for(Author author:authors){
+        int authorId = 0;
+        for (Author author : authors) {
             authorId++;
             System.out.printf("%-5s %-10s %-15s %-15s %-10s"
-                    ,authorId,author.getProfile().getName(),author.getProfile().getLastName()
-                    ,dateFormat.format(author.getProfile().getBirthdate()),author.getBooks(),"Books:");
+                    , authorId, author.getProfile().getName(), author.getProfile().getLastName()
+                    , dateFormat.format(author.getProfile().getBirthdate()), "Books:");
             for (Book book : author.getBooks()) {
-                System.out.print(book+"  ");
+                System.out.print(book.getTitle() + ", ");
             }
             System.out.println();
         }

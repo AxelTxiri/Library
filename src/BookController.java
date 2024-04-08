@@ -35,29 +35,43 @@ public class BookController {
                     bookMenu();
                     break;
                 case 2:
-                    listOption = readMenu(listOption);
-                    bookRepository.readBook(listOption);
+                    if(BookRepository.books.isEmpty()){
+                        System.out.println("There's no books to read.");
+                        System.out.println();
+                    }
+                    else{
+                        listOption = readMenu(listOption);
+                        bookRepository.readBook(listOption);
+                    }
+
                     bookMenu();
                     break;
                 case 3:
-                    bookRepository.readBook(1);
-                    System.out.println();
-                    System.out.println("Enter the # of the Author to edit:");
-                    int index = scanner.nextInt();
-                    scanner.nextLine();
-                    index--;
+                    if(BookRepository.books.isEmpty()){
+                        System.out.println("There's no books to update.");
+                        System.out.println();
+                    }
+                    else{
+                        bookRepository.readBook(1);
+                        System.out.println();
+                        System.out.println("Enter the # of the Author to edit:");
+                        int index = scanner.nextInt();
+                        scanner.nextLine();
+                        index--;
 
-                    System.out.println("Enter isbn:");
-                    String isbnUpdate = scanner.nextLine();
-                    System.out.println("Enter title:");
-                    String titleUpdate = scanner.nextLine();
-                    Author authorUpdate = authorSelection();
-                    System.out.println("Publish date:");
-                    Date publishDateUpdate = dateController.dateInput();
-                    boolean isAvailableUpdate = true;
+                        System.out.println("Enter isbn:");
+                        String isbnUpdate = scanner.nextLine();
+                        System.out.println("Enter title:");
+                        String titleUpdate = scanner.nextLine();
+                        Author authorUpdate = authorSelection();
+                        System.out.println("Publish date:");
+                        Date publishDateUpdate = dateController.dateInput();
+                        boolean isAvailableUpdate = true;
 
-                    bookRepository.updateBook(index,isbnUpdate,titleUpdate,authorUpdate
-                            ,publishDateUpdate,isAvailableUpdate);
+                        bookRepository.updateBook(index,isbnUpdate,titleUpdate,authorUpdate
+                                ,publishDateUpdate,isAvailableUpdate);
+                    }
+
                     bookMenu();
                     break;
                 case 4:
@@ -73,6 +87,7 @@ public class BookController {
                         scanner.nextLine();
                         deleteIndex--;
                         bookRepository.deleteBook(deleteIndex);
+                        deleteIndex = 0;
                     }
 
                     bookMenu();

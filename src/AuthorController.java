@@ -20,20 +20,32 @@ public class AuthorController {
                     authorMenu();
                     break;
                 case 2:
-                    System.out.println("AUTHOR LIST:");
-                    authorRepository.readAuthor();
+                    if(AuthorRepository.authors.isEmpty()){
+                        System.out.println("There's no authors to show.");
+                        System.out.println();
+                    }else{
+                        System.out.println("AUTHOR LIST:");
+                        authorRepository.readAuthor();
+                    }
+
                     authorMenu();
                     break;
                 case 3:
-                    authorRepository.readAuthor();
-                    System.out.println();
-                    System.out.println("Enter the # of the Author to edit:");
-                    int index = scanner.nextInt();
-                    scanner.nextLine();
-                    index--;
+                    if(AuthorRepository.authors.isEmpty()){
+                        System.out.println("There's no authors to update.");
+                        System.out.println();
+                    }else{
+                        authorRepository.readAuthor();
+                        System.out.println();
+                        System.out.println("Enter the # of the Author to edit:");
+                        int index = scanner.nextInt();
+                        scanner.nextLine();
+                        index--;
 
-                    Profile updatedProfile = ProfileController.profileBuilder();
-                    authorRepository.updateAuthor(index, updatedProfile);
+                        Profile updatedProfile = ProfileController.profileBuilder();
+                        authorRepository.updateAuthor(index, updatedProfile);
+                    }
+
                     authorMenu();
                     break;
                 case 4:

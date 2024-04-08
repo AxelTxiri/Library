@@ -56,11 +56,11 @@ public class BookRepository {
     public void deleteBook(int index){
         if(!books.get(index).isAvailable()){
             System.out.println("You cannot delete borrowed books.");
+        }else{
+            for(Author author:authorRepository.getAuthors()){
+                author.getBooks().remove(books.remove(index));
+            }
+            System.out.println("Successfully deleted.");
         }
-        books.remove(index);
-        for(Author author:authorRepository.getAuthors()){
-            author.getBooks().remove(books.remove(index));
-        }
-        System.out.println("Successfully deleted.");
     }
 }

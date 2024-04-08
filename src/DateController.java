@@ -23,4 +23,14 @@ public class DateController {
         }while(!isValidDate);
         return date;
     }
+    public static Date seederDate(String seederDate){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = null;
+        try {
+            date = dateFormat.parse(seederDate);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        return date;
+    }
 }

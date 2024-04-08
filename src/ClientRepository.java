@@ -15,9 +15,13 @@ public class ClientRepository {
         int clientId=0;
         for(Client client:clients){
             clientId++;
-            System.out.printf("%-5s %-10s %-15s %-15s %-10s\n"
+            System.out.printf("%-5s %-10s %-15s %-15s %-10s"
                     ,clientId,client.getProfile().getName(),client.getProfile().getLastName()
-                    ,dateFormat.format(client.getProfile().getBirthdate()),client.getBorrowedBooks().toString());
+                    ,dateFormat.format(client.getProfile().getBirthdate()),"Books:");
+            for (Book book : client.getBorrowedBooks()) {
+                System.out.print(book.getTitle() + " ");
+            }
+            System.out.println();
         }
     }
     public void updateClient(int index, Profile profile){

@@ -20,20 +20,34 @@ public class ClientController {
                     clientMenu();
                     break;
                 case 2:
-                    System.out.println("CLIENT LIST:");
-                    clientRepository.readClient();
+                    if(ClientRepository.clients.isEmpty()){
+                        System.out.println("There's no clients to delete.");
+                        System.out.println();
+                    }
+                    else {
+                        System.out.println("CLIENT LIST:");
+                        clientRepository.readClient();
+                    }
+
                     clientMenu();
                     break;
                 case 3:
-                    clientRepository.readClient();
-                    System.out.println();
-                    System.out.println("Enter the # of the Client to edit:");
-                    int index = scanner.nextInt();
-                    scanner.nextLine();
-                    index--;
+                    if(ClientRepository.clients.isEmpty()){
+                        System.out.println("There's no clients to delete.");
+                        System.out.println();
+                    }
+                    else {
+                        clientRepository.readClient();
+                        System.out.println();
+                        System.out.println("Enter the # of the Client to edit:");
+                        int index = scanner.nextInt();
+                        scanner.nextLine();
+                        index--;
 
-                    Profile updatedProfile = ProfileController.profileBuilder();
-                    clientRepository.updateClient(index, updatedProfile);
+                        Profile updatedProfile = ProfileController.profileBuilder();
+                        clientRepository.updateClient(index, updatedProfile);
+                    }
+
                     clientMenu();
                     break;
                 case 4:
