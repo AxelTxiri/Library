@@ -1,3 +1,9 @@
+package Controller;
+
+import Model.AuthorRepository;
+import Model.Book;
+import Model.Profile;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -37,7 +43,7 @@ public class AuthorController {
                     }else{
                         authorRepository.readAuthor();
                         System.out.println();
-                        System.out.println("Enter the # of the Author to edit:");
+                        System.out.println("Enter the # of the Model.Author to edit:");
                         int index = scanner.nextInt();
                         scanner.nextLine();
                         index--;
@@ -56,7 +62,7 @@ public class AuthorController {
                     else{
                         authorRepository.readAuthor();
                         System.out.println();
-                        System.out.println("Enter the # of the Author to delete:");
+                        System.out.println("Enter the # of the Model.Author to delete:");
                         int deleteIndex = scanner.nextInt();
                         scanner.nextLine();
                         deleteIndex--;

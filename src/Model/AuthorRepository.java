@@ -1,3 +1,5 @@
+package Model;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
@@ -35,7 +37,7 @@ public class AuthorRepository {
     }
     public void deleteAuthor(int index){
         if(authors.get(index).getBooks().isEmpty()){
-            System.out.println("Delete Author's books to delete the author.");
+            System.out.println("Delete Model.Author's books to delete the author.");
         }
         authors.remove(index);
         System.out.println("Successfully deleted.");

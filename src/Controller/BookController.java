@@ -1,4 +1,9 @@
-import java.util.ArrayList;
+package Controller;
+
+import Model.Author;
+import Model.AuthorRepository;
+import Model.BookRepository;
+
 import java.util.Date;
 import java.util.Scanner;
 
@@ -28,7 +33,7 @@ public class BookController {
 
                         bookRepository.createBook(index,isbn,title,author,publishDate,isAvailable);
                     }else{
-                        System.out.println("You need to create an Author to create a book.");
+                        System.out.println("You need to create an Model.Author to create a book.");
                     }
                     index=0;
 
@@ -54,7 +59,7 @@ public class BookController {
                     else{
                         bookRepository.readBook(1);
                         System.out.println();
-                        System.out.println("Enter the # of the Author to edit:");
+                        System.out.println("Enter the # of the Model.Author to edit:");
                         int index = scanner.nextInt();
                         scanner.nextLine();
                         index--;
@@ -82,7 +87,7 @@ public class BookController {
                     else{
                         bookRepository.readBook(1);
                         System.out.println();
-                        System.out.println("Enter the # of the Book to delete:");
+                        System.out.println("Enter the # of the Model.Book to delete:");
                         int deleteIndex = scanner.nextInt();
                         scanner.nextLine();
                         deleteIndex--;
@@ -119,14 +124,14 @@ public class BookController {
     }
     private static Author authorSelection() {
         authorRepository.readAuthor();
-        System.out.println("Enter the # of the Author of the book:");
+        System.out.println("Enter the # of the Model.Author of the book:");
 
 
         do{
             index = scanner.nextInt();
             scanner.nextLine();
             if(index<0||index> AuthorRepository.getAuthors().size()){
-                System.out.println("Enter a valid Author #:");
+                System.out.println("Enter a valid Model.Author #:");
             }
         }while(index<0||index> AuthorRepository.getAuthors().size());
         index--;

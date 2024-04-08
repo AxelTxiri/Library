@@ -1,3 +1,9 @@
+package Controller;
+
+import Model.Book;
+import Model.ClientRepository;
+import Model.Profile;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,8 +20,10 @@ public class ClientController {
                 case 1 :
                     Profile profile = ProfileController.profileBuilder();
                     ArrayList<Book> borrowedBooks = new ArrayList<>();
+                    String username = scanner.nextLine();
+                    String password = scanner.nextLine();
 
-                    clientRepository.createClient(profile,borrowedBooks);
+                    clientRepository.createClient(profile,username,password,borrowedBooks);
 
                     clientMenu();
                     break;
@@ -39,7 +47,7 @@ public class ClientController {
                     else {
                         clientRepository.readClient();
                         System.out.println();
-                        System.out.println("Enter the # of the Client to edit:");
+                        System.out.println("Enter the # of the Model.Client to edit:");
                         int index = scanner.nextInt();
                         scanner.nextLine();
                         index--;
@@ -58,7 +66,7 @@ public class ClientController {
                     else{
                         clientRepository.readClient();
                         System.out.println();
-                        System.out.println("Enter the # of the Client to delete:");
+                        System.out.println("Enter the # of the Model.Client to delete:");
                         int deleteIndex = scanner.nextInt();
                         scanner.nextLine();
                         deleteIndex--;

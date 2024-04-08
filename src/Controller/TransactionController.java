@@ -1,3 +1,7 @@
+package Controller;
+
+import Model.*;
+
 import java.util.Scanner;
 import java.rmi.server.UID;
 import java.util.Date;
@@ -105,7 +109,7 @@ public class TransactionController {
             }else{
                 System.out.println("Transactions between " + startDate + " and " + endDate + ":");
                 System.out.println();
-                System.out.printf("%-30s %-15s %-25s %-25s\n","Transaction ID","Client","Type of transaction","Book title","Date");
+                System.out.printf("%-30s %-15s %-25s %-25s\n","Model.Transaction ID","Model.Client","Type of transaction","Model.Book title","Date");
             }
         }
         for (Transaction transaction : TransactionRepository.transactions) {
@@ -130,7 +134,7 @@ public class TransactionController {
             }else{
                 System.out.println("Transactions of the client " + client + ":");
                 System.out.println();
-                System.out.printf("%-30s %-15s %-25s %-25s\n","Transaction ID","Client","Type of transaction","Book title","Date");
+                System.out.printf("%-30s %-15s %-25s %-25s\n","Model.Transaction ID","Model.Client","Type of transaction","Model.Book title","Date");
             }
         }
         for (Transaction transaction : TransactionRepository.transactions) {
@@ -155,7 +159,7 @@ public class TransactionController {
             }else{
                 System.out.println("Transactions of the client " + book + ":");
                 System.out.println();
-                System.out.printf("%-30s %-25s %-25s %-25s\n","Transaction ID","Book title","Type of transaction","Client","Date");
+                System.out.printf("%-30s %-25s %-25s %-25s\n","Model.Transaction ID","Model.Book title","Type of transaction","Model.Client","Date");
             }
         }
         for (Transaction transaction : TransactionRepository.transactions) {
@@ -189,7 +193,7 @@ public class TransactionController {
                     , clientId, client.getProfile().getName(), client.getProfile().getLastName());
         }
         System.out.println();
-        System.out.println("Enter the # of the Client to borrow them a book:");
+        System.out.println("Enter the # of the Model.Client to borrow them a book:");
         indexClient = scanner.nextInt();
         scanner.nextLine();
         indexClient--;
@@ -216,7 +220,7 @@ public class TransactionController {
                 String type1 = "Borrow";
                 transactionGenerator(type1, indexClient, indexBook);
             } else {
-                System.out.println("Book not available.");
+                System.out.println("Model.Book not available.");
             }
         }
         System.out.println();
@@ -236,7 +240,7 @@ public class TransactionController {
             System.out.println();
         }
         System.out.println();
-        System.out.println("Enter the # of the Client who is retuning a book:");
+        System.out.println("Enter the # of the Model.Client who is retuning a book:");
         indexClient = scanner.nextInt();
         scanner.nextLine();
         indexClient--;
@@ -244,7 +248,7 @@ public class TransactionController {
         if (ClientRepository.clients.get(indexClient).getBorrowedBooks().isEmpty()) {
             System.out.println("This client does not have any book to return.");
         } else {
-            System.out.printf("%-5s %-15s %-15s\n", "#", "Title", "Author");
+            System.out.printf("%-5s %-15s %-15s\n", "#", "Title", "Model.Author");
             int bookIdAll = 0;
             for (Book book : ClientRepository.clients.get(indexClient).getBorrowedBooks()) {
                 bookIdAll++;

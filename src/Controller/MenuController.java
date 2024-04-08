@@ -1,3 +1,5 @@
+package Controller;
+
 import java.util.Scanner;
 
 public class MenuController {
@@ -7,20 +9,24 @@ public class MenuController {
         mainMenu();
         do{
             switch (option){
-                case 1 :BookController bookController = new BookController();
-                bookController.bookOperations();
+                case 1 :
+                    BookController bookController = new BookController();
+                BookController.bookOperations();
                     mainMenu();
                     break;
-                case 2:ClientController clientController = new ClientController();
-                clientController.clientOperations();
+                case 2:
+                    ClientController clientController = new ClientController();
+                ClientController.clientOperations();
                     mainMenu();
                     break;
-                case 3:AuthorController authorController = new AuthorController();
-                authorController.authorOperations();
+                case 3:
+                    AuthorController authorController = new AuthorController();
+                AuthorController.authorOperations();
                     mainMenu();
                     break;
-                case 4:TransactionController transactionController = new TransactionController();
-                    transactionController.transactionOperations();
+                case 4:
+                    TransactionController transactionController = new TransactionController();
+                    TransactionController.transactionOperations();
                     mainMenu();
                     break;
             }
@@ -30,10 +36,10 @@ public class MenuController {
         System.out.println("*******************************");
         System.out.println("*          MAIN MENU          *");
         System.out.println("*******************************");
-        System.out.println("*        1.Book Menu          *");
-        System.out.println("*        2.Client Menu        *");
-        System.out.println("*        3.Author Menu        *");
-        System.out.println("*        4.Transaction Menu   *");
+        System.out.println("*        1.Model.Book Menu          *");
+        System.out.println("*        2.Model.Client Menu        *");
+        System.out.println("*        3.Model.Author Menu        *");
+        System.out.println("*        4.Model.Transaction Menu   *");
         System.out.println("*        5.Exit               *");
         System.out.println("*******************************");
 

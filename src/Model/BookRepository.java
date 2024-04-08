@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -13,7 +15,7 @@ public class BookRepository {
     public void readBook(int listOption){
         switch (listOption){
             case 1:
-                System.out.printf("%-5s %-15s %-15s %-15s %-8s\n","#","Title","Author","Isbn","Availability");
+                System.out.printf("%-5s %-15s %-15s %-15s %-8s\n","#","Title","Model.Author","Isbn","Availability");
                 int bookIdAll=0;
                 for(Book book:books){
                     bookIdAll++;
@@ -23,7 +25,7 @@ public class BookRepository {
                 }
                 break;
             case 2:
-                System.out.printf("%-5s %-15s %-15s %-15s %-8s\n","#","Title","Author","Isbn","Availability");
+                System.out.printf("%-5s %-15s %-15s %-15s %-8s\n","#","Title","Model.Author","Isbn","Availability");
                 int bookIdBorrowed=0;
                 for(Book book:books){
                     bookIdBorrowed++;
@@ -35,7 +37,7 @@ public class BookRepository {
                 }
                 break;
             case 3:
-                System.out.printf("%-5s %-15s %-15s %-15s %-8s\n","#","Title","Author","Isbn","Availability");
+                System.out.printf("%-5s %-15s %-15s %-15s %-8s\n","#","Title","Model.Author","Isbn","Availability");
                 int bookIdAvailable=0;
                 for(Book book:books){
                     bookIdAvailable++;

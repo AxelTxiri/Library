@@ -1,3 +1,7 @@
+package Controller;
+
+import Model.Profile;
+
 import java.util.Date;
 import java.util.Scanner;
 
