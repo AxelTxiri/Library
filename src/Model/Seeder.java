@@ -2,6 +2,7 @@ package Model;
 
 import Controller.DateController;
 
+import java.security.Permission;
 import java.util.ArrayList;
 
 public class Seeder {
@@ -52,5 +53,6 @@ public class Seeder {
         administrator1.setPermissions(permissionsAdmin1);
         administrator1.setUsername("axel01");
         administrator1.setPassword("011101");
+
     }
 }

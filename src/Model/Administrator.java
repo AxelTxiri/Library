@@ -2,18 +2,14 @@ package Model;
 
 import java.util.ArrayList;
 
-enum Permissions {
-    READ, WRITE, DELETE
-}
-
 public class Administrator extends User {
     ArrayList<Permissions> permissions;
     boolean isSuperAdmin;
 
     public Administrator() {
     }
-    public Administrator(Profile profile, String username, String password, ArrayList<Permissions> permissions,
-                         boolean isSuperAdmin) {
+
+    public Administrator(Profile profile, String username, String password, ArrayList<Permissions> permissions, boolean isSuperAdmin) {
         super(profile, username, password);
         this.permissions = permissions;
         this.isSuperAdmin = isSuperAdmin;

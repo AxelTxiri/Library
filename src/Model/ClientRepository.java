@@ -34,7 +34,7 @@ public class ClientRepository {
     }
     public void deleteClient(int index){
         if(!clients.get(index).getBorrowedBooks().isEmpty()){
-            System.out.println("Delete Model.Author's books to delete the author.");
+            System.out.println("Return client's books to delete the client.");
         }
         clients.remove(index);
         System.out.println("Successfully deleted.");
