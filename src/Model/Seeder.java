@@ -40,5 +40,17 @@ public class Seeder {
                 DateController.seederDate("10-09-2021"),true);
         bookRepository.createBook(1,"524","Maze Runner", AuthorRepository.getAuthors().get(1),
                 DateController.seederDate("22-05-2021"),true);
+
+        Administrator administrator1 = new Administrator();
+        Profile profileAdmin1 = new Profile("Axelninho","Gtz",DateController.seederDate("01-11-2001"));
+        administrator1.setProfile(profileAdmin1);
+        administrator1.setSuperAdmin(true);
+        ArrayList<Permissions> permissionsAdmin1 = new ArrayList<>();
+        permissionsAdmin1.add(Permissions.READ);
+        permissionsAdmin1.add(Permissions.WRITE);
+        permissionsAdmin1.add(Permissions.DELETE);
+        administrator1.setPermissions(permissionsAdmin1);
+        administrator1.setUsername("axel01");
+        administrator1.setPassword("011101");
     }
 }

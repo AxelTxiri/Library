@@ -36,10 +36,10 @@ public class MenuController {
         System.out.println("*******************************");
         System.out.println("*          MAIN MENU          *");
         System.out.println("*******************************");
-        System.out.println("*        1.Model.Book Menu          *");
-        System.out.println("*        2.Model.Client Menu        *");
-        System.out.println("*        3.Model.Author Menu        *");
-        System.out.println("*        4.Model.Transaction Menu   *");
+        System.out.println("*        1.Book Menu          *");
+        System.out.println("*        2.Client Menu        *");
+        System.out.println("*        3.Author Menu        *");
+        System.out.println("*        4.Transaction Menu   *");
         System.out.println("*        5.Exit               *");
         System.out.println("*******************************");
 

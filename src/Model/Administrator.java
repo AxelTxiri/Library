@@ -1,29 +1,29 @@
 package Model;
 
-import java.security.Permission;
 import java.util.ArrayList;
+
 enum Permissions {
-    READ, UPDATE, DELETE
+    READ, WRITE, DELETE
 }
 
 public class Administrator extends User {
-    ArrayList<Permission> permissions;
+    ArrayList<Permissions> permissions;
     boolean isSuperAdmin;
 
     public Administrator() {
     }
-    public Administrator(Profile profile, String username, String password,ArrayList<Permission> permissions,
+    public Administrator(Profile profile, String username, String password, ArrayList<Permissions> permissions,
                          boolean isSuperAdmin) {
         super(profile, username, password);
         this.permissions = permissions;
         this.isSuperAdmin = isSuperAdmin;
     }
 
-    public ArrayList<Permission> getPermissions() {
+    public ArrayList<Permissions> getPermissions() {
         return permissions;
     }
 
-    public void setPermissions(ArrayList<Permission> permissions) {
+    public void setPermissions(ArrayList<Permissions> permissions) {
         this.permissions = permissions;
     }
 
